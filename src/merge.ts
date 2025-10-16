@@ -11,9 +11,9 @@ function merge(
     const merged: number[] = []; 
     //ผมคิดว่าจะใช้การเช็คของ array แต่ละช่องแล้วถ้าช่องไหนน้อยสุดกจะถูกขยับมากขึ้นไป1ช่องจนครบทุกช่องแล้วจะให้ค่าเป็น Infinity เพื่อจะได้ไม่ไม่กวนการเช็ค min
     while (x < collection1.length || y < collection2.length || z >= 0) {
-        const val1 = x < collection1.length ? collection1[x] : Infinity; 
-        const val2 = y < collection2.length ? collection2[y] : Infinity; 
-        const val3 = z >= 0 ? collection3[z] : Infinity; 
+        const val1 = collection1[x] ?? Infinity;
+        const val2 = collection2[y] ?? Infinity;
+        const val3 = collection3[z] ?? Infinity; 
 
         const minValue = Math.min(val1, val2, val3); 
         merged.push(minValue);
